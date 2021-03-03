@@ -5,8 +5,10 @@
  */
 package br.com.pointtosales;
 
+import java.util.Arrays;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
 
 /**
  *
@@ -16,6 +18,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class RootApplication extends SpringApplication {
     
     public static void main(String[] args) {
-        SpringApplication.run(RootApplication.class, args);
+        ApplicationContext context = SpringApplication.run(RootApplication.class, args);
+        
+        String[] beansNames = context.getBeanDefinitionNames();
+        Arrays.sort(beansNames);
+        for (String name : beansNames) {
+            // System.out.println(name);
+        }
     }
 }
