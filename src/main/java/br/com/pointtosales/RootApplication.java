@@ -9,12 +9,14 @@ import java.util.Arrays;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
 
 /**
  *
  * @author wsilva
  */
 @SpringBootApplication // same as @Configuration @EnableAutoConfiguration @ComponentScan
+@ComponentScan({ "br.com.pointtosales" })
 public class RootApplication extends SpringApplication {
     
     public static void main(String[] args) {
